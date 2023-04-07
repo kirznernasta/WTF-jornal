@@ -6,14 +6,13 @@ void main() {
   group(
     'settings provider',
     () {
+      setUpAll(() => SharedPreferences.setMockInitialValues({}));
       group(
         'default value if no value is stored in SharedPreferences',
         () {
           test(
             'theme',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -27,8 +26,6 @@ void main() {
           test(
             'font size',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -43,8 +40,6 @@ void main() {
           test(
             'bubble alignment',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -58,8 +53,6 @@ void main() {
           );
 
           test('date alignment', () async {
-            SharedPreferences.setMockInitialValues({});
-
             final SharedPreferences sharedPreferences =
                 await SharedPreferences.getInstance();
 
@@ -74,8 +67,6 @@ void main() {
           test(
             'background image',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -91,8 +82,6 @@ void main() {
           test(
             'use fingerprint',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -114,8 +103,6 @@ void main() {
           test(
             'theme',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -131,8 +118,6 @@ void main() {
           test(
             'font size',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -147,8 +132,6 @@ void main() {
           test(
             'bubble alignment',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -164,8 +147,6 @@ void main() {
           test(
             'date alignment',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -181,8 +162,6 @@ void main() {
           test(
             'image background',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -198,8 +177,6 @@ void main() {
           test(
             'use fingerprint',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -222,8 +199,6 @@ void main() {
           test(
             'theme',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 
@@ -242,8 +217,6 @@ void main() {
           test(
             'font size',
             () async {
-              SharedPreferences.setMockInitialValues({});
-
               final SharedPreferences sharedPreferences =
                   await SharedPreferences.getInstance();
 

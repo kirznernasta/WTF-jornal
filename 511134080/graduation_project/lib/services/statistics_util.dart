@@ -83,6 +83,27 @@ class StatisticsUtil {
     return chartsStat;
   }
 
+  static List<int> calculateSummaryStatistics(
+      List<Event> events, String timeOption) {
+    final summaryStat = [0, 0, 0];
+
+    final date = calculateFilteredDate(timeOption);
+
+    for (final event in events) {
+      if (event.time.isAfter(date)) {
+        if (event.isFavourite) {
+          summaryStat[1] += 1;
+        }
+        if (event.categoryIndex > 1) {
+          summaryStat[2] += 1;
+        }
+        summaryStat[0] += 1;
+      }
+    }
+
+    return summaryStat;
+  }
+
   static List<List<int>> _calculateForThisYear(
     List<Event> events,
     DateTime filteredDate,

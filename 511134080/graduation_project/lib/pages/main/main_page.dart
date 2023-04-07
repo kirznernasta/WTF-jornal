@@ -20,7 +20,7 @@ class _MainPageState extends State<MainPage> {
     switch (index) {
       case 0:
         return const HomePage();
-      case 2:
+      case 1:
         return const TimelinePage();
       default:
         throw Exception('Invalid index!');
@@ -39,20 +39,10 @@ class _MainPageState extends State<MainPage> {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.assignment,
-          ),
-          label: 'Daily',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
             Icons.map,
           ),
           label: 'Timeline',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.explore),
-          label: 'Explore',
-        )
       ],
       selectedItemColor: Colors.deepPurple,
       currentIndex: state.selectedIndex,

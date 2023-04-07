@@ -76,7 +76,10 @@ void main() {
       );
       await tester.pumpWidget(widget);
 
-      expect(find.text('05.04.2023'), findsOneWidget);
+      expect(
+          find.text(
+              '${DateFormat('dd').format(date)}.${DateFormat('MM').format(date)}.${DateFormat('yyyy').format(date)}'),
+          findsOneWidget);
     },
   );
 
@@ -89,7 +92,10 @@ void main() {
       );
       await tester.pumpWidget(widget);
 
-      expect(find.text('Apr 05, 2023'), findsOneWidget);
+      expect(
+          find.text(
+              '${DateFormat('MMM').format(date)} ${DateFormat('dd').format(date)}, ${DateFormat('yyyy').format(date)}'),
+          findsOneWidget);
     },
   );
 }

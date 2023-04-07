@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../models/event.dart';
 import '../../../repositories/event_repository.dart';
-import '../../../services/statistics_helper.dart';
+import '../../../services/statistics_util.dart';
 
 part 'label_statistics_state.dart';
 

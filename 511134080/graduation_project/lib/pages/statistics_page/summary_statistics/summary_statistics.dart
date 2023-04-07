@@ -34,7 +34,7 @@ class SummaryStatistics extends StatelessWidget {
             ),
           ),
           Text(
-            '${state.summaryStatistics(timeOption)[0]}',
+            '${context.read<SummaryStatisticsCubit>().summaryStatistics(timeOption)[0]}',
             style: TextStyle(
               color: Theme.of(context).scaffoldBackgroundColor,
             ),
@@ -60,7 +60,7 @@ class SummaryStatistics extends StatelessWidget {
             ),
           ),
           Text(
-            '${state.summaryStatistics(timeOption)[1]}',
+            '${context.read<SummaryStatisticsCubit>().summaryStatistics(timeOption)[1]}',
             style: TextStyle(
               color: Theme.of(context).scaffoldBackgroundColor,
             ),
@@ -86,7 +86,7 @@ class SummaryStatistics extends StatelessWidget {
             ),
           ),
           Text(
-            '${state.summaryStatistics(timeOption)[2]}',
+            '${context.read<SummaryStatisticsCubit>().summaryStatistics(timeOption)[2]}',
             style: TextStyle(
               color: Theme.of(context).scaffoldBackgroundColor,
             ),
@@ -227,7 +227,10 @@ class SummaryStatistics extends StatelessWidget {
           width: 400,
           child: BarChart(
             BarChartData(
-              maxY: state.maxY(timeOption).toDouble(),
+              maxY: context
+                  .read<SummaryStatisticsCubit>()
+                  .maxY(timeOption)
+                  .toDouble(),
               borderData: _borderData(context),
               gridData: _gridData(context, charts),
               barGroups: _barGroups(context, charts),
@@ -243,7 +246,8 @@ class SummaryStatistics extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SummaryStatisticsCubit, SummaryStatisticsState>(
       builder: (context, state) {
-        final charts = state.chartsStatistics(timeOption);
+        final charts =
+            context.read<SummaryStatisticsCubit>().chartsStatistics(timeOption);
         return Column(
           children: [
             _summaryStatistics(context, state),
